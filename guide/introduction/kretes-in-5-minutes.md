@@ -8,7 +8,7 @@ The video below shows how to create a **full-stack** web application in TypeScri
 
 ## Video
 
-@[youtube](BfcwZgPHwKk)
+[Watch the video on YouTube](https://www.youtube.com/watch?v=BfcwZgPHwKk)
 
 ## Specification
 
