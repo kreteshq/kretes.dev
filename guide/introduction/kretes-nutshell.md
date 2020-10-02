@@ -1,5 +1,5 @@
 ---
-title: Kretes In A Nutshell
+title: Kretes in a nutshell
 pos: 3
 ---
 # Kretes In A Nutshell
