@@ -52,7 +52,7 @@ For some tasks you may need to provide some input data (the payload) so that the
 
 ```ts
 Background.schedule({
-  task: SendEmail
+  task: SendEmail,
   payload: { to: 'admin@example.com' }
 });
 ```
