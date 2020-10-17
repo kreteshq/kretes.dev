@@ -25,6 +25,20 @@ For convenience, let's create the `db` alias:
 import { database as db } from 'kretes';
 ```
 
+## Create Table
+
+You need to create at least one table in our database to be able to run SQL queries. Let's create a dummy table called `widget`. Each widget will have a `name` and `amount`.
+
+```sql
+create table widget (
+  id serial primary key,
+  name text,
+  amount integer
+);
+```
+
+**NOTE**: There's a convention in Kretes to name database tables in singular form, e.g. `widget` instead of `widgets` or `post` instead of `posts`.
+
 ## Basic Queries
 
 Let's see how we can perform simple SQL queries:
@@ -34,19 +48,19 @@ Let's see how we can perform simple SQL queries:
 Get all elements with all columns from `widgets` table; equivalent to `select * from widgets`:
 
 ```js
-const results = await db`widgets`;
+const results = await db`widget`;
 ```
 
 Get all elements with all some columns from `widgets` table; equivalent to `select id, name from widgets`:
 
 ```js
-const results = await db`widgets`.returning('id', 'name');
+const results = await db`widget`.returning('id', 'name');
 ```
 
 Get a single element from `widgets` table by `id`:
 
 ```js
-const result = await db`widgets`.where({ id })
+const result = await db`widget`.where({ id })
 ```
 
 ### `INSERT` / `UPDATE` Queries
@@ -54,13 +68,13 @@ const result = await db`widgets`.where({ id })
 Insert a single element into `widgets` table:
 
 ```js
-await db`widgets`.insert({ name: 'Widget 1', amount: 2 })
+await db`widget`.insert({ name: 'Widget 1', amount: 2 })
 ```
 
 Insert few elements at once into `widgets` table:
 
 ```js
-await db`widgets`.insert([
+await db`widget`.insert([
   { name: 'Widget 1', amount: 2 },
   { name: 'Widget 2', amount: 7 },
   { name: 'Widget 3', amount: 4 }
@@ -70,7 +84,7 @@ await db`widgets`.insert([
 Update an existing element (identified by `id`) in `widgets` table:
 
 ```js
-await db`widgets`.where({ id: 2 }).set({ name: 'Widget 22' })
+await db`widget`.where({ id: 2 }).set({ name: 'Widget 22' })
 ```
 
 ### `DELETE` Queries
