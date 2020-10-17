@@ -45,7 +45,9 @@ Once Nix is installed, try to install the PostgreSQL package:
 nix-shell -p postgresql_13
 ```
 
-### Nix Shell Integration
+## Nix Shell Integration
+
+You can configure automatic setup of a development environment when entering your project directory.
 
 Install `direnv`:
 
@@ -53,9 +55,9 @@ Install `direnv`:
 nix-env -i direnv
 ```
 
-Set up the direnv shell hook:
+Then, set up the direnv hook for your shell.
 
-**For Bash:**
+### Bash
 
 Add the following line at the end of the ~/.bashrc file:
 
@@ -63,7 +65,7 @@ Add the following line at the end of the ~/.bashrc file:
 eval "$(direnv hook bash)"
 ```
 
-**For Zsh:**
+### Zsh
 
 Add the following line at the end of the ~/.zshrc file:
 
