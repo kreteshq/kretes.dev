@@ -15,14 +15,20 @@ Kretes provides a simple and efficient background processing in Node.js using th
 The task are written in TypeScript and put by name on the task queues along with the necessary payload.
 
 ```ts
+import { Task } from 'kretes';
+
 const SendEmail: Task = async input => {
   const { name } = input;
 
   console.log(`Hello, ${name}`);
 }
+
+export default SendEmail;
 ```
 
 By convention, the task names in Kretes are written in Camel Case with the first letter uppercase: think, this is a `SendEmail` task.
+
+**Important**: Each task must be exported as `default`.
 
 Each task must be placed in a separate file within the `tasks/` directory at the root of your Kretes project, e.g. `tasks/SendEmail.ts` for the task above.
 
