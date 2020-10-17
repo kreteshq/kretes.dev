@@ -37,12 +37,38 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 Here's a guide how to [install Nix on Windows](https://nathan.gs/2019/04/12/nix-on-windows/) by Nathan Bijnens
 
----
+### Verify Nix installation
 
 Once Nix is installed, try to install the PostgreSQL package:
 
 ```
-nix-shell -p postgresql_12
+nix-shell -p postgresql_13
+```
+
+### Nix Shell Integration
+
+Install `direnv`:
+
+```
+nix-env -i direnv
+```
+
+Set up the direnv shell hook:
+
+**For Bash:**
+
+Add the following line at the end of the ~/.bashrc file:
+
+```
+eval "$(direnv hook bash)"
+```
+
+**For Zsh:**
+
+Add the following line at the end of the ~/.zshrc file:
+
+```
+eval "$(direnv hook zsh)"
 ```
 
 
