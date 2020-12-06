@@ -7,92 +7,52 @@ next:
 ---
 # Installing Kretes
 
-## Prerequisites
+Kretes can be installed as a command-line tool, or as a Visual Studio plugin.
 
-Kretes uses [the Nix package manager](https://nixos.org/) to simplify the management of the application dependencies. This not only makes the development environment easier to manage, but it also can substantially help organize dependencies when deploying to production.
+## Using CLI
 
-Once Nix is installed, there will no longer be needed to install any dependencies manually, including things like setting up and configuring the database and its plugins. From now on everything needed by Kretes to run your application will be automatically installed and configured behind the scenes.
-
-Note, that the installation of **the first dependency** in Nix can be a bit long, but afterwards it will be quick again.
-
-### Linux
+Install `kretes` globally to use its CLI commands
 
 ```
-curl -L https://nixos.org/nix/install | sh
+npm install -g kretes
 ```
 
-### MacOS
+You can now use the `kretes` command, or `ks` alias, to execute commands.
 
 ```
-sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+Usage: kretes <command> [options]
+
+Commands:
+  kretes new [dir]           Create new project               [aliases: init, n]
+  kretes start               Start the application           [aliases: start, s]
+  kretes add <pkg>           Add package as project dependency
+  kretes install             Install dependencies
+  kretes update              Update packages
+  kretes upgrade             Upgrade packages
+  kretes setup               Setup the development environment
+  kretes database [command]  Database operations                   [aliases: db]
+  kretes deploy              Deploy the application        [aliases: deploy, de]
+  kretes routes              Display routes                         [aliases: r]
+  kretes background          Run background processing             [aliases: bg]
+  kretes doctor              Run the doctor utility               [aliases: doc]
+
+Options:
+  -h, --help     Show help                                             [boolean]
+  -V, --version  Show version number                                   [boolean]
+
+Examples:
+  kretes new my-project  Create and initialize `my-project` directory
+  kretes start           Start the application
+
+for more information, find the documentation at https://kretes.dev
+
+You need at least one command before moving on
 ```
 
-### Windows
-
-Windows requires the Windows Subsystem for Linux (WSL). This needs to be manually activated using Powershell (with administrator privileges):
-
-```
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-```
-
-Here's a guide how to [install Nix on Windows](https://nathan.gs/2019/04/12/nix-on-windows/) by Nathan Bijnens
-
-### Verify Nix installation
-
-Once Nix is installed, try to install the PostgreSQL package:
-
-```
-nix-shell -p postgresql_13
-```
-
-## Nix Shell Integration
-
-You can configure automatic setup of a development environment when entering your project directory.
-
-Install `direnv`:
-
-```
-nix-env -i direnv
-```
-
-Then, set up the direnv hook for your shell.
-
-### Bash
-
-Add the following line at the end of the ~/.bashrc file:
-
-```
-eval "$(direnv hook bash)"
-```
-
-### Zsh
-
-Add the following line at the end of the ~/.zshrc file:
-
-```
-eval "$(direnv hook zsh)"
-```
-
-
-## Using VS Code (Recommended)
+## As VS Code Plugin
 
 Install the [Kretes extension](https://marketplace.visualstudio.com/items?itemName=kretes.kretes) from the VS Code Marketplace.
 
 ![Kretes Zap: Installing the Extensions](/images/zap/kretes-installing.gif)
 
 > If you enjoy the process, please rate the extension. It will help raise the project visibility. If there's something wrong, please let me know before, so I could fix. It's in human nature to make errors and I'd appreciate your communication so we could make it better together!
-
-## Using CLI
-
-Install `kretes` globally to use the CLI commands
-
-```
-npm install -g kretes
-```
-
-
-Open the application in Visual Studio Code
-
-```
-code my-project
-```
