@@ -1,6 +1,8 @@
 ---
 pos: 2
 title: Create App
+description: >
+  Learn how to initialize the project structure.
 ---
 
 This tutorial is work-in-progress. The goal is create a task management application as [shown here](https://taski.app/). Feedback is welcome!
