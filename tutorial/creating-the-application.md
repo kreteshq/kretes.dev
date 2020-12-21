@@ -3,7 +3,17 @@ pos: 2
 title: Create App
 ---
 
+This tutorial is work-in-progress. The goal is create a task management application as [shown here](https://taski.app/). Feedback is welcome!
+
 Found an error? Would you like to suggest an improvement? [Open an issue on GitHub](https://github.com/kreteshq/kretes.dev).
+
+---
+
+Install Kretes globally. Be sure, you have version `0.79` or higher
+
+```
+npm i -g kretes
+```
 
 ---
 
