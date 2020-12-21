@@ -21,28 +21,60 @@ mkdir -p features/Task/{View, Controller}
 
 In `features/Task/View` create `Collection.tsx`. This component will be responsible for displaying a list of tasks. We are using Tailwind CSS for styling.
 
-```html
-<ul className="m-0 my-2 p-0 list-none w-full">
-  <li className="bg-white shadow mb-2">
-    <label className="flex justify-start items-center p-4">
-      <div className="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2">
-        <input type="checkbox" className="opacity-0 absolute" />
-        <svg className="fill-current hidden w-4 h-4 text-green-500 pointer-events-none;" viewBox="0 0 20 20">
-          <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-        </svg>
-      </div>
-      <div className="ml-2">A task name</div>
-    </label>
-  </li>
-</ul>
+```tsx
+import React from 'react';
+
+export const TaskCollection = ({}) => {
+  return (
+    <ul className="m-0 my-2 p-0 list-none w-full">
+      <li className="bg-white shadow mb-2">
+        <label className="flex justify-start items-center p-4">
+          <div className="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2">
+            <input type="checkbox" className="opacity-0 absolute" />
+            <svg className="fill-current hidden w-4 h-4 text-green-500 pointer-events-none;" viewBox="0 0 20 20">
+              <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+            </svg>
+          </div>
+          <div className="ml-2">A task name</div>
+        </label>
+      </li>
+    </ul>
+  )
+}
 ```
 
-As we use a custom checkbox with an SVG image for the marking the checked status, we need to make sure to display this image as `block`. Add the following CSS snippet to XXX
+As we use a custom checkbox with an SVG image for the marking the checked status, we need to make sure to display this image as `block`. Add the following CSS snippet to `<head>` section of `index.html`.
 
 ```css
-input:checked+svg {
-  display: block;
+<style>
+  input:checked+svg {
+    display: block;
+  }
+</style>
+```
+
+For convenience, export `TaskCollection` from `features/Task/View/index.ts` so that later on you can import all directory components from the single location:
+
+```ts
+export { TaskCollection } from './Collection';
+```
+
+Import `TaskCollection` in `features/Base/View/index.tsx`
+
+```tsx{8}
+import React from 'react';
+
+import { TaskCollection } from 'Task/View';
+
+function App() {
+  return (
+    <div className="max-w-2xl mx-auto">
+      <TaskCollection />
+    </div>
+  );
 }
+
+export { App };
 ```
 
 Start the application
@@ -51,9 +83,9 @@ Start the application
 kretes start
 ```
 
-Navigate to [localhost:5544](http://localhost:5544) to see the result.
+Navigate to [localhost:5544](http://localhost:5544) to see the result. There should be a single task that we statically defined in the `TaskCollection` component.
 
-Let's define the shape of our data. For now, it will be just the `Task` shape that consists of a `name` and the `done` status. In `features/Task/Shape/index.ts` create the following interface
+Since we use TypeScript, let's define the shape of our data. For now, it will be just the `Task` shape that consists of a `name` and the `done` status. In `features/Task/Shape/index.ts` create the following interface
 
 ```ts
 export interface Task {
@@ -62,7 +94,9 @@ export interface Task {
 };
 ```
 
-Let's add a simple form with one input field. In `features/Task/View/Input.tsx` create the following component.
+Let's build a non-functional, static form with one input field. It's static because nothing happens when the *Add* button is clicked. It's non-functional as we are only concerned with how it's displayed in the UI at this point.
+
+In `features/Task/View/Input.tsx` create the following component.
 
 ```tsx
 import React from 'react';
@@ -81,25 +115,73 @@ export const TaskInput = ({}) => {
 }
 ```
 
-For convenience, put `TaskCollection` and `TaskInput` in `features/Task/View/index.ts` so that you can import them from the single location:
+For convenience, export `TaskCollection` and `TaskInput` from `features/Task/View/index.ts` so that you can import them from the single location:
 
-```ts
+```ts{2}
 export { TaskCollection } from './Collection';
 export { TaskInput } from './Input'
 ```
 
 Put the `TaskInput` component above the `TaskCollection` in `Base/View/index.ts`
 
-```tsx
-<div className="max-w-2xl mx-auto">
-  <TaskInput />
-  <TaskCollection collection={collection} />
-</div>
+```tsx{3,8}
+import React from 'react';
+
+import { TaskCollection, TaskInput } from 'Task/View';
+
+function App() {
+  return (
+    <div className="max-w-2xl mx-auto">
+      <TaskInput />
+      <TaskCollection />
+    </div>
+  );
+}
+
+export { App };
 ```
 
-Refactor the `TaskCollection` component by using a component to represent a single task. Put the single task in the `TaskElement` component:
+Refactor the `TaskCollection` component by introducing a sub-component to represent a single task: `TaskElement`.
 
 ```tsx
+import React from 'react';
+import { TaskElement } from './Element';
+
+export const TaskCollection = ({ collection = [] }) => {
+  return (
+    <ul className="m-0 my-2 p-0 list-none w-full">
+      {collection.map(element => <TaskElement {...element} />)}
+    </ul>
+  );
+}
+```
+
+Put the single task, i.e. the content of `<li>` tag, in the `TaskElement` component. We want to have a possibility to parametrize the name of each task. Thus, we extract it as the component property (often referred to as *prop*). In this example, our prop is `name` and becomes the input parameter to the `TaskElement` component function.
+
+```tsx{3,13}
+import React from 'react';
+
+export const TaskElement = ({ name }) => {
+  return (
+    <li className="bg-white shadow mb-2">
+      <label className="flex justify-start items-center p-4">
+        <div className="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2">
+          <input type="checkbox" className="opacity-0 absolute" />
+          <svg className="fill-current hidden w-4 h-4 text-green-500 pointer-events-none;" viewBox="0 0 20 20">
+            <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+          </svg>
+        </div>
+        <div className="ml-2">{name}</div>
+      </label>
+    </li>
+  );
+}
+
+```
+
+Optionally, let's make the code in `TaskCollection` more explicit to the compiler by annotating it using the `Task` type we created previously.
+
+```tsx{3,8}
 import React from 'react';
 import { TaskElement } from './Element';
 import { Task } from 'Task/Shape';
@@ -113,8 +195,9 @@ export const TaskCollection = ({ collection = [] }) => {
 }
 ```
 
+Let's display the collection using the in-memory data by fetching it over the wire from an API. Kretes allows to conveniently create REST (and GraphQL) APIs directly in the same application. No more integration hell with connecting the front-end and the back-end.
 
-Let's display the collection using the in-memory data by fetching it over the wire from our API. First, in `features/Task/Controller/browse.ts` create the `browse` handler. It will respond to `GET` requests by returing the pre-defined collection of tasks:
+In this application we will use a REST API. First, in `features/Task/Controller/browse.ts` create the `browse` handler.
 
 ```ts
 import { Handler, response } from 'kretes';
@@ -122,8 +205,8 @@ import { Handler, response } from 'kretes';
 const { OK } = response;
 
 const collection = [
-  { name: 'Task 11', done: false },
-  { name: 'Task 22', done: false },
+  { name: 'Task 1', done: false },
+  { name: 'Task 2', done: false },
 ]
 
 export const browse: Handler = ({ }) => {
@@ -131,7 +214,15 @@ export const browse: Handler = ({ }) => {
 }
 ```
 
-Install `react-query` to easily communicate the API. In `features/Base/View/index.tsx`, define the `request` function for fetching the tasks from the API using browser's built-in `fetch` function (often referred to as the fetch API). Then, pass the `request` function to the `useQuery` hook that comes with `react-query`. This hook will create a client-side cache layer from the data returned by previously implemented `browse` handler.
+This handler will respond to `GET` requests. It's one of Kretes convention to help you create web applications faster. In this example the `browse` handler returnes a pre-defined collection of tasks. For now, we statically defined as the in-memory variable `collection`.
+
+Let's start by installng `react-query` so that our frontend can easily communicate with our API.
+
+```
+kretes add react-query
+```
+
+In `features/Base/View/index.tsx`, define the `request` function for fetching the tasks from the API using browser's built-in `fetch` function (often referred to as the fetch API). Then, pass the `request` function to the `useQuery` hook that comes with `react-query`. This hook will create a client-side cache layer from the data returned by previously implemented `browse` handler.
 
 ```tsx
 import React from 'react';
