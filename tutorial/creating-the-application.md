@@ -285,17 +285,19 @@ function App() {
 export { App };
 ```
 
-We can improve the input field by transforming it into a form. We will be using `react-query-form` to control that form. First, install the library:
+We can improve the input field by transforming it into a real, fully functional, non-static form. We will be using `react-query-form` to control the form behavior.
+
+First, add the library to your project:
 
 ```
 kretes add react-hook-form
 ```
 
-Then, register the input field as managed by `react-hook-form` by using the `register` function that comes from the `useForm` hook. Additionally, you must give the input field a name. In the example, we name it `name`.
+Then, register the input field as managed by `react-hook-form` by using the `register` function that comes from the `useForm` hook. Additionally, you must give the input field a name. In the example, we name it just `name`.
 
 The logic that will be executed once someone clicks the add button is defined in the `onSubmit` function. Here, we wrap our custom logic as an anonymous function passed to `handleSubmit` that comes from the `useForm` hook.
 
-```tsx
+```tsx{2,5-6,9-10}
 import React from 'react';
 import { useForm } from "react-hook-form";
 
@@ -320,10 +322,33 @@ export const TaskInput = ({}) => {
 
 Optionally, we can mark the input field as required. This way, it won't be possible to submit empty tasks. Use the `required` attribute as the `register` parameter.
 
+```tsx{10}
+import React from 'react';
+import { useForm } from "react-hook-form";
+
+export const TaskInput = ({}) => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = handleSubmit(data => console.log(data))
+
+  return (
+    <form className="flex items-center justify-between relative mb-8" onSubmit={onSubmit}>
+      <input
+        name="name"
+        ref={register({ required: true })}
+        placeholder="Add new item..."
+        type="text"
+        className="p-4 pr-20 border-l-4 border-gray-500 bg-gray-200 w-full shadow-inner outline-none"
+      />
+      <button type="submit" className="shadow text-blue-100 border-blue-100 bg-gray-500 font-semibold py-2 px-4 absolute right-0 mr-2">Add</button>
+    </form>
+  );
+}
+```
+
 To display possible errors, we need to use the `errors` object that comes from the `useForm` hook. It contains not `null` values for any fields that are registered in our form.
 
 
-```tsx
+```tsx{5,11}
 import React from 'react';
 import { useForm } from "react-hook-form";
 
@@ -347,9 +372,21 @@ export const TaskInput = ({}) => {
 }
 ```
 
-Let's connect our frontend with our backend by defining a mutation. We will use the `useMutation` from the `react-query` library. As before we need to define a function that will represent the request that is being sent to our API. Contrary to previous example, this time we need to send a `POST` request, i.e. we want to send what the user entered in the input field to the server-side API. Our data is the `Task` that consists only from the `name`. As we send it as `application/json` we must stringify the payload before passing it as the body of the request.
+Let's connect our frontend with our backend by using the `react-query` library. First, we need to add it to our project:
 
-```tsx
+```
+kretes add react-query
+```
+
+Let's start by defining a mutation. We will use the `useMutation` from the `react-query` library. As before we need to define a function that will represent the request that is being sent to our API. Contrary to previous example, this time we need to send a `POST` request, i.e. we want to send what the user entered in the input field to the server-side API. Our data is the `Task` that consists only from the `name`. As we send it as `application/json` we must stringify the payload before passing it as the body of the request.
+
+```tsx{3,5,7-14,19-20}
+import React from 'react';
+import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+
+import { Task } from 'Task/Shape';
+
 const request = (data: Task) =>
   fetch('/task', {
     method: 'POST',
@@ -365,11 +402,30 @@ export const TaskInput = ({ }) => {
   const mutation = useMutation(request);
   const onSubmit = handleSubmit(data => mutation.mutate(data));
 
+  return (
+    <div className="mb-8">
+      <form className="flex items-center justify-between relative" onSubmit={onSubmit}>
+        <input
+          name="name"
+          ref={register({ required: true })}
+          placeholder="Add new item..."
+          type="text"
+          className="p-4 pr-20 border-l-4 border-gray-500 bg-gray-200 w-full shadow-inner outline-none"
+        />
+        <button type="submit" className="shadow text-blue-100 border-blue-100 bg-gray-500 font-semibold py-2 px-4 absolute right-0 mr-2">Add</button>
+      </form>
+      <div>{errors.name && <span>This field is required</span>}</div>
+    </div>
+  );
+}
+
+
+
   // as before
 }
 ```
 
-The problem is that we haven't yet defined a handler in our API to accept this payload. We can cheat a bit by performing so-called optimistic update, i.e. the client state will be updated immediately to reflect the change while the request is being sent to the API. The important detail is that we don't wait for the API to acknowledge the change. Once the data is fetched again, the state will be synchronized automatically. This approach is popular as it improves the user experience and simplifes the state management.
+The problem is that we haven't yet defined a handler in our API to accept this payload. We can cheat a bit by performing a so-called *optimistic update*, i.e. the client state will be updated immediately to reflect the change while the request is being sent to the API. The important detail is that we don't wait for the API to acknowledge the change. Once the data is fetched again, the state will be synchronized automatically. This approach is popular as it improves the user experience and simplifes the state management.
 
 ```tsx
 export const TaskInput = ({ }) => {
@@ -400,7 +456,9 @@ Let's open the `config/default.json` and define the name of our database under t
 }
 ```
 
-Now, we need to start the database engine. There are several ways to do that depending on the platform. Check [the PostgreSQL documentation](https://www.postgresql.org/download/) for details. By default, the PostgreSQL RDBM starts on the port `5432`. Run `kretes database create` to create a database as defined in `config/default.json`.
+Now, we need to start the database engine. There are several ways to do that depending on the platform. Check [the PostgreSQL documentation](https://www.postgresql.org/download/) for details. By default, the PostgreSQL RDBM starts on the port `5432`.
+
+Once the PostgreSQL is started, run `kretes database create` to create a database with the name as defined in `config/default.json`.
 
 Now we need to define the shape of data in our database. As we only have tasks at the moment, there will be just one table. Put the following content in `db/setup.sql`
 
@@ -423,8 +481,7 @@ Then, run the setup method
 kretes database setup
 ```
 
-Once the database setup is finished, we can interact with the data from our handlers. First, let's fetch the data from the database and display it on the frontend.
-
+Once the database setup is finished, we can interact with the data from our handlers. First, let's fetch the data from the database and display it on the frontend. Modify the `features/Task/Controller/browse.ts`
 
 ```ts
 import { Handler, response, database as db } from 'kretes';
@@ -437,7 +494,7 @@ export const browse: Handler = async ({ }) => {
 }
 ```
 
-Now, we can finally define the API handler for persisting new tasks
+Now, we can finally define the API handler for persisting new tasks. Put the following code in `features/Task/Controller/create.ts`:
 
 ```ts
 import { Handler, response, database as db } from 'kretes';
@@ -464,3 +521,4 @@ const onSubmit = handleSubmit(data => {
 });
 ```
 
+Congratulations! You have now created a fullstack application in TypeScript with React.js as the UI library.
