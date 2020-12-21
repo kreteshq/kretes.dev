@@ -197,7 +197,7 @@ export const TaskCollection = ({ collection = [] }) => {
 
 Let's display the collection using the in-memory data by fetching it over the wire from an API. Kretes allows to conveniently create REST (and GraphQL) APIs directly in the same application. No more integration hell with connecting the front-end and the back-end.
 
-In this application we will use a REST API. First, in `features/Task/Controller/browse.ts` create the `browse` handler.
+In this application we will be using a REST API. First, in `features/Task/Controller/browse.ts` create the `browse` handler.
 
 ```ts
 import { Handler, response } from 'kretes';
@@ -214,7 +214,7 @@ export const browse: Handler = ({ }) => {
 }
 ```
 
-This handler will respond to `GET` requests. It's one of Kretes convention to help you create web applications faster. In this example the `browse` handler returnes a pre-defined collection of tasks. For now, we statically defined as the in-memory variable `collection`.
+This handler will respond to `GET` requests. It's one of Kretes conventions to help you create web applications faster. In this example the `browse` handler returnes a pre-defined collection of tasks. For now, we statically defined as the in-memory variable `collection`.
 
 Let's start by installng `react-query` so that our frontend can easily communicate with our API.
 
@@ -224,13 +224,42 @@ kretes add react-query
 
 In `features/Base/View/index.tsx`, define the `request` function for fetching the tasks from the API using browser's built-in `fetch` function (often referred to as the fetch API). Then, pass the `request` function to the `useQuery` hook that comes with `react-query`. This hook will create a client-side cache layer from the data returned by previously implemented `browse` handler.
 
-```tsx
+```tsx{2,6-7,10,12-13,18}
 import React from 'react';
 import { useQuery } from 'react-query';
 
 import { TaskCollection, TaskInput } from 'Task/View';
 
-const request = () => fetch('/task').then(response => response.json());
+const toJSON = _ => _.json()
+const request = () => fetch('/task').then(toJSON);
+
+function App() {
+  const { data, isLoading, error } = useQuery<any, Error>('tasks', request);
+
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>Error: {error.message}</div>
+
+  return (
+    <div className="max-w-2xl mx-auto">
+      <TaskInput />
+      <TaskCollection collection={data} />
+    </div>
+  );
+}
+
+export { App };
+```
+
+Before we move to another topic, let's finish up this section by refactoring a bit our `App` component. We can extract the top-level HTML snippet to a separate component. This will be a plain container for the application layout. Such code organization will allow us easily to reuse in the future the same layout in different pages across the entire application.
+
+```tsx{9-11,13-14,23,26}
+import React from 'react';
+import { useQuery } from 'react-query';
+
+import { TaskCollection, TaskInput } from 'Task/View';
+
+const toJSON = _ => _.json()
+const request = () => fetch('/task').then(toJSON);
 
 interface Children {
   children: React.ReactNode;
