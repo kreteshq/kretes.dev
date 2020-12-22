@@ -10,7 +10,6 @@ description: >
 ![Full-Stack TypeScript Example: Taski.app](/images/taskiapp.jpg#center)
 
 [Live Demo](https://taski.app)
-| [Video Lesson](https://www.youtube.com/watch?v=rLAElFkRrWI&list=PLhXZp00uXBk5hnHEIAFl74mZyLrVKKJAD)
 
 In this tutorial we will be writing a fully featured [TypeScript](https://www.typescriptlang.org/) application using Kretes. In other words, we will cover the whole process of building a **full-stack TypeScript** application in a comprehensive way - we could say from A to Z. This tutorial will cover not only the front-end part, but also the back-end part and everything in-between, from setting up the database through designing the database schema, exposing an API using both REST & GraphQL endpoints, till the application deployment.
 
@@ -22,7 +21,13 @@ We will build yet another task management application. I decided to showcase cre
 
 ## Technology Stack
 
-On the back-end we will be using [Node.js](https://nodejs.org/en/) 14.x, while on the front-end we will be using a UI framework Vue.js, specifically the upcoming [Vue.js 3](https://github.com/vuejs/vue-next) that introduces the [Composition API](https://composition-api.vuejs.org/); something similar to Hooks in React.js. For the database layer, you will use [PostgreSQL](https://www.postgresql.org/), probably the best database out there. I will show you how to design the database schema, how to create tables and how to make relations between them. We will also see how to use PostgreSQL as a NoSQL solution and how it compares to databases such as MongoDB et al. For the UI we will do something different. Instead of writing CSS by hand we will use [Tailwind CSS](https://tailwindcss.com/) that provides a set of predefined building blocks that we can combine directly in HTML pages to quickly create coherent UIs. Finally, Kretes will put all those tools together in a ready to use solution (a boilerplate on steroids) so that you can focus on building the actual application and its business logic, instead of spending time on trying to put things like TypeScript, Node.js, Vue.js or PostgreSQL together manually.
+On the back-end we will be using [Node.js](https://nodejs.org/en/) 14.x, while on the front-end we will be using a UI library React.js.
+
+For the database layer, you will use [PostgreSQL](https://www.postgresql.org/), probably the best database out there. I will show you how to design the database schema, how to create tables and how to make relations between them. We will also see how to use PostgreSQL as a NoSQL solution and how it compares to databases such as MongoDB et al.
+
+For the UI we will do something different. Instead of writing CSS by hand we will use [Tailwind CSS](https://tailwindcss.com/) that provides a set of predefined building blocks that we can combine directly in HTML pages to quickly create coherent UIs.
+
+Finally, Kretes will put all those tools together in a ready to use solution (a boilerplate on steroids) so that you can focus on building the actual application and its business logic, instead of spending time on trying to put things like TypeScript, Node.js, React.js or PostgreSQL together manually.
 
 ## Future
 
@@ -30,13 +35,9 @@ This tutorial is meant to be modern. At some point I may switch certain things i
 
 ## Plan
 
-1. Design the application UI using Tailwind CSS
-2. Make the application interactive using Vue.js 3
+1. Design the UI prototype with Tailwind CSS
+2. Make the app interactive using React.js
 3. Implement the backend
 4. Define and expose a REST API
 5. Design a basic database schema
-
-## Video
-
-If you prefer watching than reading, check this video [on YouTube](https://www.youtube.com/watch?v=rLAElFkRrWI&list=PLhXZp00uXBk5hnHEIAFl74mZyLrVKKJAD) of me coding this application.
 
