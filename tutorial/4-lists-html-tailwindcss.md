@@ -1,8 +1,8 @@
 ---
-pos: 3
-title: Prototyping with Tailwind CSS
+pos: 4
+title: Lists with Tailwind CSS
 description: >
-  Let's use Tailwind CSS to design and build the UI prototype.
+  Using Tailwind CSS to build the UI prototype.
 ---
 
 # Prototyping with Tailwind CSS
