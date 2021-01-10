@@ -5,6 +5,8 @@ description: >
   Initializing projects with templates
 ---
 
+# Project Init
+
 Install Kretes globally. Be sure, you have version `0.80.1` or higher
 
 ```
@@ -46,3 +48,5 @@ kretes start
 ```
 
 From now one you shouldn't need to restart the application while developing. There may be occasional quirks, but I'm working to eliminate them. Feel free to let me know anytime if you stumble on something.
+
+The application starts on the port `:5544`. In your browser, open http://localhost:5544 to see it.
