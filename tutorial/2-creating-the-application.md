@@ -32,3 +32,17 @@ The React.js template comes with the following libraries:
 * [react-query](https://react-query.tanstack.com)
 * [react-hook-form](https://react-hook-form.com)
 * [wouter](https://github.com/molefrog/wouter)
+
+Once the project initialization is over, switch to the project directory
+
+```
+cd taski.app
+```
+
+Open it using your editor of choice and start the application in development mode using the `start` command:
+
+```
+kretes start
+```
+
+From now one you shouldn't need to restart the application while developing. There may be occasional quirks, but I'm working to eliminate them. Feel free to let me know anytime if you stumble on something.
