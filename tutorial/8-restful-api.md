@@ -39,4 +39,4 @@ export const browse: Handler = ({ }) => {
 }
 ```
 
-This handler will respond to `GET` requests sent to `/rest/task`. You can test it by opening the `http://localhost:5544/rest/task` in your browser.
+This handler will respond to `GET` requests sent to `/_api/task`. You can test it by opening the `http://localhost:5544/_api/task` in your browser.

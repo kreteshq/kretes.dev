@@ -7,7 +7,7 @@ description: >
 
 # Fetching Data from a RESTful API with React.js
 
-Let's now implement in React.js the mechanism of fetching the data from server. Since the server data is exposed as a RESTful API, we need to send a `GET` request from a React.js component to a specific endpoint. In the previous step, we implemented a handler returning the collection of tasks and exposed it under the `/__rest/task` endpoint.
+Let's now implement in React.js the mechanism of fetching the data from server. Since the server data is exposed as a RESTful API, we need to send a `GET` request from a React.js component to a specific endpoint. In the previous step, we implemented a handler returning the collection of tasks and exposed it under the `/_api/task` endpoint.
 
 At this point we could've just used the `fetch` function (that's built-in into the browser) to make the request from React.js. This is, however, a bit more complicated as the data we operate on is never static. In our application, it seems static so far, because we defined the task collection as a constant. Eventually though, this collection will be changing during the application life-time once we implement the feature for adding new tasks.
 
@@ -22,7 +22,7 @@ import { useQuery } from 'react-query';
 import { TaskCollection, TaskInput } from 'Task/View';
 
 const toJSON = _ => _.json()
-const request = () => fetch('/task').then(toJSON);
+const request = () => fetch('/_api/task').then(toJSON);
 
 function App() {
   const { data, isLoading, error } = useQuery<any, Error>('tasks', request);
@@ -50,7 +50,7 @@ import { useQuery } from 'react-query';
 import { TaskCollection, TaskInput } from 'Task/View';
 
 const toJSON = _ => _.json()
-const request = () => fetch('/task').then(toJSON);
+const request = () => fetch('/_api/task').then(toJSON);
 
 interface Children {
   children: React.ReactNode;

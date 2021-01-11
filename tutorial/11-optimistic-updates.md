@@ -19,7 +19,7 @@ import { useMutation, useQueryClient } from "react-query";
 import { Task } from 'Task/Shape';
 
 const request = (data: Task) =>
-  fetch('/task', {
+  fetch('/_api/task', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
