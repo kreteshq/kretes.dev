@@ -7,7 +7,7 @@ description: >
 
 # Project Init
 
-Install Kretes globally. Be sure, you have version `0.80.1` or higher
+Install Kretes globally. Be sure, you have version `0.85.0` or higher
 
 ```
 npm i -g kretes
