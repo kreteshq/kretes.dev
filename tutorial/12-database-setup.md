@@ -2,7 +2,7 @@
 pos: 12
 title: Database Setup
 description: >
-  Setting up a relation database
+  Setting up a relational database
 ---
 
 # Database Setup
