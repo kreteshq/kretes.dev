@@ -14,7 +14,7 @@ Kretes can be installed as a command-line tool, or as a Visual Studio plugin.
 Install `kretes` globally to use its CLI commands
 
 ```
-npm install -g kretes
+npm install -g kretes pnmp
 ```
 
 You can now use the `kretes` command, or `ks` alias, to execute commands.
