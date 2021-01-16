@@ -31,13 +31,8 @@ Finally, Kretes will put all those tools together in a ready to use solution (a 
 
 ## Future
 
-This tutorial is meant to be modern. At some point I may switch certain things in our stack. For example, we might try to replace Node.js with [Deno](https://deno.land/) or Vue.js with the [Solid.js](https://github.com/ryansolid/solid) framework, etc. The idea is to track the current trends & tendencies in web development instead of using older, already established ways of creating web applications, and also to give you an early example how to use these modern solutions to build full-stack TypeScript applications. In other words, our goal here is to explore new or improved ways of building web applications.
+This tutorial is meant to be modern. At some point I may switch certain things in our stack. For example, we might try to replace Node.js with [Deno](https://deno.land/) or React.js with the [Solid.js](https://github.com/ryansolid/solid) framework, etc.
 
-## Plan
+The idea is to track the current trends & tendencies in web development instead of using older, already established ways of creating web applications, and also to give you an early example how to use these modern solutions to build full-stack TypeScript applications. In other words, our goal here is to explore new or improved ways of building web applications.
 
-1. Design the UI prototype with Tailwind CSS
-2. Make the app interactive using React.js
-3. Implement the backend
-4. Define and expose a REST API
-5. Design a basic database schema
 

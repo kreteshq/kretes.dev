@@ -5,6 +5,8 @@ description: >
   Using React.js to handle form validations & submissions
 ---
 
+# Forms with React.js
+
 We can improve the input field by transforming it into a real, fully functional, non-static form. We will be using `react-hook-form` to control the form behavior. `react-hook-form` is included in the Kretes React.js template. Thus, there is no need to add it as a dependency to your project.
 
 Let's start by *registering* our single input field as being managed via `react-hook-form` by using `register` - this function comes from the `useForm` hook. Additionally, you must give the input field a name. In the example, we name it `name`.

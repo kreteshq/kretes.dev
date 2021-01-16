@@ -10,10 +10,8 @@ logo: preact.svg
 
 ## Install Preact
 
-**Reminder:** Kretes uses [pnpm](https://pnpm.js.org/) instead of npm or yarn.
-
 ```
-pnpm add preact
+kretes add preact
 ```
 
 ## TypeScript Configuration

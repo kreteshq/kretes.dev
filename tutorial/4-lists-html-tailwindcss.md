@@ -7,9 +7,7 @@ description: >
 
 # Prototyping with Tailwind CSS
 
-## Prerequisites
-
-None. Kretes comes with Tailwind CSS integration out of the box.
+Kretes comes with Tailwind CSS integration out of the box.
 
 ## Steps
 

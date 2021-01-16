@@ -9,10 +9,8 @@ logo: vue.svg
 
 ## Install Vue.js 3
 
-**Reminder:** Kretes uses [pnpm](https://pnpm.js.org/) instead of npm or yarn.
-
 ```
-pnpm add vue@3.0.0-rc.5
+kretes add vue@3.0.0-rc.5
 ```
 
 ## Init Script

@@ -9,12 +9,8 @@ logo: react.svg
 
 ## Install React.js
 
-**Reminder:** Kretes uses [pnpm](https://pnpm.js.org/) instead of npm or yarn.
-
-As of *Aug, 2020* React.js does not provide ESM build. We will use [pika]'s fork that provides actively maintained ESM builds of React & React DOM.
-
 ```
-pnpm add react@npm:@pika/react react-dom@npm:@pika/react-dom @types/react @types/react-dom
+kretes add react react-dom @types/react @types/react-dom
 ```
 
 ## TypeScript Configuration

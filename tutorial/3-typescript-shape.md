@@ -1,6 +1,6 @@
 ---
 pos: 3
-title: TypeScript Shape
+title: Using TypeScript
 description: >
   Defining the shape of date using TypeScript interfaces
 ---
