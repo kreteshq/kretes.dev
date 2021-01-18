@@ -7,7 +7,7 @@ description: >
 
 # Displaying Collections in React.js
 
-Refactor the `TaskCollection` component by introducing a sub-component to represent a single task: `TaskElement`.
+Refactor the `TaskCollection` component by introducing another component to represent a single task: `TaskElement`.
 
 ```tsx
 import React from 'react';

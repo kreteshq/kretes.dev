@@ -47,9 +47,9 @@ Before we move to another topic, let's finish up this section by refactoring a b
 import React from 'react';
 import { useQuery } from 'react-query';
 
-import { TaskCollection, TaskInput } from 'Task/View';
+import { TaskCollection, TaskInput } from '@features/Task/View';
 
-const toJSON = _ => _.json()
+const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);
 
 interface Children {

@@ -21,11 +21,14 @@ We will build yet another task management application. I decided to showcase cre
 
 ## Technology Stack
 
-On the back-end we will be using [Node.js](https://nodejs.org/en/) 14.x, while on the front-end we will be using a UI library React.js.
+On the back-end we will be using [Node.js](https://nodejs.org/en/) an open source runtime built on Chrome's V8 JavaScript engine for creating both server-side apps, as well as JavaScript code run outside of the browser environment, e.g. command-line tools.
 
-For the database layer, you will use [PostgreSQL](https://www.postgresql.org/), probably the best database out there. I will show you how to design the database schema, how to create tables and how to make relations between them. We will also see how to use PostgreSQL as a NoSQL solution and how it compares to databases such as MongoDB et al.
+On the front-end we will be using [React.js](https://reactjs.org/), an open-source, front end, JavaScript library for building user interfaces or UI components.
 
-For the UI we will do something different. Instead of writing CSS by hand we will use [Tailwind CSS](https://tailwindcss.com/) that provides a set of predefined building blocks that we can combine directly in HTML pages to quickly create coherent UIs.
+For the database layer, we will use [PostgreSQL](https://www.postgresql.org/), one of the most popular relational databases out there. We will design the database schema, create tables and make relations between them. We will also see how to use PostgreSQL as a NoSQL solution and how it compares to databases such as MongoDB et al.
+
+Instead of writing CSS by hand we will use [Tailwind CSS](https://tailwindcss.com/),
+a CSS framework packed with utility classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to rapidly build modern websites, directly in HTML markup.
 
 Finally, Kretes will put all those tools together in a ready to use solution (a boilerplate on steroids) so that you can focus on building the actual application and its business logic, instead of spending time on trying to put things like TypeScript, Node.js, React.js or PostgreSQL together manually.
 
