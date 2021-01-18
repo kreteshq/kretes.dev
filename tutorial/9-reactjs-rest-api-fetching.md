@@ -48,6 +48,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 
 import { TaskCollection, TaskInput } from '@features/Task/View';
+import { Task } from '@features/Task/Shape';
 
 const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);
@@ -60,7 +61,7 @@ const Container = ({ children }: Children) =>
   <div className="max-w-2xl mx-auto">{children}</div>
 
 function App() {
-  const { data, isLoading, error } = useQuery<any, Error>('tasks', request);
+  const { data, isLoading, error } = useQuery<Task[], Error>('tasks', request);
 
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>Error: {error.message}</div>
