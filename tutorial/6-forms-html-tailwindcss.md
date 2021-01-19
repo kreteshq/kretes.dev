@@ -1,6 +1,6 @@
 ---
 pos: 6
-title: Forms with Tailwind CSS
+title: 6. Forms with Tailwind CSS
 description: >
   Let's use Tailwind CSS to design and build the UI prototype.
 ---

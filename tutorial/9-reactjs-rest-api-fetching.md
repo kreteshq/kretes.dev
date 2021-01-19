@@ -1,6 +1,6 @@
 ---
 pos: 9
-title: Fetching from API in React.js
+title: 9. Fetching from API in React.js
 description: >
   Using React Query to integrate with a remote REST API endpoint
 ---
@@ -19,13 +19,14 @@ Similarly to `react-hook-form`, `react-query` is also included in the Kretes Rea
 import React from 'react';
 import { useQuery } from 'react-query';
 
-import { TaskCollection, TaskInput } from 'Task/View';
+import { TaskCollection, TaskInput } from '../../Task/View';
+import { Task } from '../../Task/Shape';
 
-const toJSON = _ => _.json()
+const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);
 
 function App() {
-  const { data, isLoading, error } = useQuery<any, Error>('tasks', request);
+  const { data, isLoading, error } = useQuery<Task[], Error>('tasks', request);
 
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>Error: {error.message}</div>
@@ -47,8 +48,8 @@ Before we move to another topic, let's finish up this section by refactoring a b
 import React from 'react';
 import { useQuery } from 'react-query';
 
-import { TaskCollection, TaskInput } from '@features/Task/View';
-import { Task } from '@features/Task/Shape';
+import { TaskCollection, TaskInput } from '../../Task/View';
+import { Task } from '../../Task/Shape';
 
 const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);

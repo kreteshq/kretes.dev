@@ -1,6 +1,6 @@
 ---
 pos: 1
-title: Specification
+title: 1. Specification
 description: >
   A spec describing what we are going to build in this tutorial
 ---

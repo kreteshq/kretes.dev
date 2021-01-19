@@ -1,6 +1,6 @@
 ---
 pos: 14
-title: Inserting into Database
+title: 14. Inserting into Database
 description: >
   Persisting tasks on the server via REST API
 ---

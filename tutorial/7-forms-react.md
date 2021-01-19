@@ -1,6 +1,6 @@
 ---
 pos: 7
-title: Forms Handling in React.js
+title: 7. Forms Handling in React.js
 description: >
   Using React.js to handle form validations & submissions
 ---

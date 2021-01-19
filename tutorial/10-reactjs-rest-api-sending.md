@@ -1,6 +1,6 @@
 ---
 pos: 10
-title: Sending to API in React.js
+title: 10. Sending to API in React.js
 description: >
   Let's use Tailwind CSS to design and build the UI prototype.
 ---

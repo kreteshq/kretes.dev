@@ -1,6 +1,6 @@
 ---
 pos: 16
-title: Summary
+title: 16. Summary
 description: >
   Adding final touches
 ---

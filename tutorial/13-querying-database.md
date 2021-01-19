@@ -1,6 +1,6 @@
 ---
 pos: 13
-title: Querying Database
+title: 13. Querying Database
 description: >
   Integrating with a database
 ---

@@ -1,6 +1,6 @@
 ---
 pos: 11
-title: Optimistic Updates in UI
+title: 11. Optimistic Updates in UI
 description: >
   Implementing optimistic updates for React.js UIs
 ---
@@ -16,7 +16,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "react-query";
 
-import { Task } from 'Task/Shape';
+import { Task } from '../../Task/Shape';
 
 const request = (data: Task) =>
   fetch('/_api/task', {

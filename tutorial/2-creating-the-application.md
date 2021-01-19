@@ -1,6 +1,6 @@
 ---
 pos: 2
-title: Setup
+title: 2. Setup
 description: >
   Setting up the project
 ---

@@ -1,6 +1,6 @@
 ---
 pos: 4
-title: Lists with Tailwind CSS
+title: 4. Lists with Tailwind CSS
 description: >
   Using Tailwind CSS to build the UI prototype.
 ---

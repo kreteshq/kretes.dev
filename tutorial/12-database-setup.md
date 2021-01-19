@@ -1,6 +1,6 @@
 ---
 pos: 12
-title: Database Setup
+title: 12. Database Setup
 description: >
   Setting up a relational database
 ---
