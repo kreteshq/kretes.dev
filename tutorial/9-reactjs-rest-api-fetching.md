@@ -25,7 +25,7 @@ import { Task } from '../../Task/Shape';
 const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);
 
-function App() {
+const App: React.FC<{}> = () => {
   const { data, isLoading, error } = useQuery<Task[], Error>('tasks', request);
 
   if (isLoading) return <div>Loading...</div>
@@ -54,14 +54,10 @@ import { Task } from '../../Task/Shape';
 const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);
 
-interface Children {
-  children: React.ReactNode;
-}
-
-const Container = ({ children }: Children) =>
+const Container: React.FC<{}> = ({ children }) =>
   <div className="max-w-2xl mx-auto">{children}</div>
 
-function App() {
+const App: React.FC<{}> = () => {
   const { data, isLoading, error } = useQuery<Task[], Error>('tasks', request);
 
   if (isLoading) return <div>Loading...</div>

@@ -27,7 +27,7 @@ const request = (data: Task) =>
     body: JSON.stringify(data),
   })
 
-export const TaskInput = ({ }) => {
+export const TaskInput: React.FC<{}> = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const mutation = useMutation(request);

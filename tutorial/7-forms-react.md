@@ -17,7 +17,7 @@ The logic that will be executed once someone clicks the add button is defined in
 import React from 'react';
 import { useForm } from "react-hook-form";
 
-export const TaskInput = ({}) => {
+export const TaskInput: React.FC<{}> = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = handleSubmit(data => console.log(data))
 
@@ -42,7 +42,7 @@ Optionally, we can mark the input field as required. This way, it won't be possi
 import React from 'react';
 import { useForm } from "react-hook-form";
 
-export const TaskInput = ({}) => {
+export const TaskInput: React.FC<{}> = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = handleSubmit(data => console.log(data))
 
@@ -68,7 +68,7 @@ To display possible errors, we need to use the `errors` object that comes from t
 import React from 'react';
 import { useForm } from "react-hook-form";
 
-export const TaskInput = ({}) => {
+export const TaskInput: React.FC<{}> = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = handleSubmit(data => console.log(data))
 

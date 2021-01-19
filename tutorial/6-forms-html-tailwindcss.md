@@ -14,7 +14,7 @@ In `features/Task/View/Input.tsx` create the following component.
 ```tsx
 import React from 'react';
 
-export const TaskInput = ({}) => {
+export const TaskInput: React.FC<{}> = ({}) => {
   return (
     <div className="flex items-center justify-between relative mb-8">
       <input

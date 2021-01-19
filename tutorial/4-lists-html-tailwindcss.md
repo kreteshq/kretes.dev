@@ -22,7 +22,7 @@ In `features/Task/View` create `Collection.tsx`. This component will be responsi
 ```tsx
 import React from 'react';
 
-export const TaskCollection = ({}) => {
+export const TaskCollection: React.FC<{}> = () => {
   return (
     <ul className="m-0 my-2 p-0 list-none w-full">
       <li className="bg-white shadow mb-2">
@@ -62,9 +62,9 @@ Import `TaskCollection` in `features/Base/View/index.tsx`
 ```tsx{8}
 import React from 'react';
 
-import { TaskCollection } from 'Task/View';
+import { TaskCollection } from '../../Task/View';
 
-function App() {
+const App: React.FC<{}> = () => {
   return (
     <div className="max-w-2xl mx-auto">
       <TaskCollection />
