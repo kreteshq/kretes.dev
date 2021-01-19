@@ -9,7 +9,7 @@ description: >
 
 It's time to move the application data server-side. This is needed as we want to (1) put it in a central location so that it's possible to share that data between users, and (2) because our server can easily integrate with a database to store and persiste that data over time.
 
-Kretes allows to conveniently create REST (and GraphQL) APIs directly in the same application In Kretes, an API is a *set* of controllers. Each controller is responsible for a particular resource. In this tutorial, we are dealing with one resource so far: `Task`.
+Kretes allows to conveniently create REST (and GraphQL) APIs directly in the same application In Kretes, an API is a set of controllers. Each controller is responsible for a particular resource. In this tutorial, we are dealing with one resource so far: `Task`.
 
 Controllers group together actions that respond to specific HTTP requests. Each action is represented by a separate file in the `Controller` directory of that resource. There is a file naming conventions so that you can quickly connect actions with specific HTTP requests without configuration. In our case, we need to create an action called `browse`. Check the X for details.
 
