@@ -25,7 +25,7 @@ export const create: Handler = async ({ params }) => {
 
 Refresh the page, and try adding a new task via the form. The new task should be added to the list and it won't disapear, even if you refresh the page in the browser, since the tasks are stored in the database on the server.
 
-Optionally, let's clear the input field once a new task is added.
+Optionally, let's clear the input field once a new task is added. Modify the file `features/Task/View/Input.tsx` as follows:
 
 ```ts
 const { register, handleSubmit, errors, reset } = useForm<Task>();
