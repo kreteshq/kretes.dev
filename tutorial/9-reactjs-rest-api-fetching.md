@@ -19,8 +19,8 @@ Similarly to `react-hook-form`, `react-query` is also included in the Kretes Rea
 import React from 'react';
 import { useQuery } from 'react-query';
 
-import { TaskCollection, TaskInput } from '../../Task/View';
-import { Task } from '../../Task/Shape';
+import { TaskCollection, TaskInput } from '@/Task/View';
+import { Task } from '@/Task/Shape';
 
 const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);
@@ -48,8 +48,8 @@ Before we move to another topic, let's finish up this section by refactoring a b
 import React from 'react';
 import { useQuery } from 'react-query';
 
-import { TaskCollection, TaskInput } from '../../Task/View';
-import { Task } from '../../Task/Shape';
+import { TaskCollection, TaskInput } from '@/Task/View';
+import { Task } from '@/Task/Shape';
 
 const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);

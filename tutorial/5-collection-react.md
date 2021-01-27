@@ -50,7 +50,7 @@ Optionally, let's make the code in `TaskCollection` more explicit to the compile
 ```tsx{3,8}
 import React from 'react';
 import { TaskElement } from './Element';
-import { Task } from 'Task/Shape';
+import { Task } from '@/Task/Shape';
 
 export const TaskCollection: React.FC<{ collection: Task[] }> = ({ collection = [] }) => {
   return (

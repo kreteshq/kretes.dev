@@ -40,7 +40,7 @@ Then, put the `TaskInput` component above the `TaskCollection` in `Base/View/ind
 ```tsx{3,8}
 import React from 'react';
 
-import { TaskCollection, TaskInput } from 'Task/View';
+import { TaskCollection, TaskInput } from '@/Task/View';
 
 function App() {
   return (

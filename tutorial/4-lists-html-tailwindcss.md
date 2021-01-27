@@ -62,7 +62,7 @@ Import `TaskCollection` in `features/Base/View/index.tsx`
 ```tsx{8}
 import React from 'react';
 
-import { TaskCollection } from '../../Task/View';
+import { TaskCollection } from '@/Task/View';
 
 const App: React.FC<{}> = () => {
   return (
