@@ -11,13 +11,25 @@ Kretes comes with Tailwind CSS integration out of the box.
 
 ## Steps
 
-In the `features` directory create `Task` and inside it create another directory: `View`
+Let's generate a React.js component for displaying a collection of tasks.
 
 ```
-mkdir -p features/Task/View
+kretes generate view Task TaskCollection
 ```
 
-In `features/Task/View` create `Collection.tsx`. This component will be responsible for displaying a list of tasks.
+This command will create a file in `<project root>/features/Task/View`. Open the `TaskCollection.tsx` and replace the following content:
+
+```tsx
+import React from 'react';
+
+export const TaskCollection: React.FC<{}> = () => {
+  return (
+    <div></div>
+  )
+}
+```
+
+with this:
 
 ```tsx
 import React from 'react';
@@ -51,13 +63,7 @@ As we use a custom checkbox with an SVG image for the marking the checked status
 </style>
 ```
 
-For convenience, export `TaskCollection` from `features/Task/View/index.ts` so that later on you can import all directory components from the single location:
-
-```ts
-export { TaskCollection } from './Collection';
-```
-
-Import `TaskCollection` in `features/Base/View/index.tsx`
+Go to `<project root>/features/Base/View/index.tsx` and import newly created `TaskCollection` component as shown below:
 
 ```tsx{8}
 import React from 'react';
@@ -74,6 +80,8 @@ const App: React.FC<{}> = () => {
 
 export { App };
 ```
+
+`@/<something>` is an alias for conveniently refer to features and their files without using relative paths, such as `../` or `../..`.
 
 Start the application
 
