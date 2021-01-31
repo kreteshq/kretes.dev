@@ -1,8 +1,10 @@
 ---
-pos: 12
-title: 12. Database Setup
+pos: 11
+title: 11. Database Setup
 description: >
   Setting up a relational database
+images:
+- postgresql.svg
 ---
 
 # Database Setup

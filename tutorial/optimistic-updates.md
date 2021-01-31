@@ -1,8 +1,10 @@
 ---
-pos: 11
-title: 11. Optimistic Updates in UI
+pos: 10
+title: 10. Optimistic Updates in UI
 description: >
   Implementing optimistic updates for React.js UIs
+images:
+- react-query.svg
 ---
 
 # Implementing Optimistic Updates in React.js
@@ -42,16 +44,15 @@ export const TaskInput: React.FC<{}> = () => {
   const onSubmit = handleSubmit(data => mutation.mutate(data));
 
   return (
-    <div className="mb-8">
-      <form className="flex items-center justify-between relative" onSubmit={onSubmit}>
+    <div>
+      <form onSubmit={onSubmit}>
         <input
           name="name"
           ref={register({ required: true })}
           placeholder="Add new item..."
           type="text"
-          className="p-4 pr-20 border-l-4 border-gray-500 bg-gray-200 w-full shadow-inner outline-none"
         />
-        <button type="submit" className="shadow text-blue-100 border-blue-100 bg-gray-500 font-semibold py-2 px-4 absolute right-0 mr-2">Add</button>
+        <button type="submit">Add</button>
       </form>
       <div>{errors.name && <span>This field is required</span>}</div>
     </div>

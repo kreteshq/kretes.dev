@@ -1,8 +1,10 @@
 ---
-pos: 7
-title: 7. Forms Handling in React.js
+pos: 6
+title: 6. Form Handling in React.js
 description: >
   Using React.js to handle form validations & submissions
+images:
+- react.svg
 ---
 
 # Forms with React.js
@@ -22,15 +24,14 @@ export const TaskInput: React.FC<{}> = () => {
   const onSubmit = handleSubmit(data => console.log(data))
 
   return (
-    <form className="flex items-center justify-between relative mb-8" onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <input
         name="name"
         ref={register}
         placeholder="Add new item..."
         type="text"
-        className="p-4 pr-20 border-l-4 border-gray-500 bg-gray-200 w-full shadow-inner outline-none"
       />
-      <button type="submit" className="shadow text-blue-100 border-blue-100 bg-gray-500 font-semibold py-2 px-4 absolute right-0 mr-2">Add</button>
+      <button type="submit">Add</button>
     </form>
   );
 }
@@ -47,15 +48,14 @@ export const TaskInput: React.FC<{}> = () => {
   const onSubmit = handleSubmit(data => console.log(data))
 
   return (
-    <form className="flex items-center justify-between relative mb-8" onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <input
         name="name"
         ref={register({ required: true })}
         placeholder="Add new item..."
         type="text"
-        className="p-4 pr-20 border-l-4 border-gray-500 bg-gray-200 w-full shadow-inner outline-none"
       />
-      <button type="submit" className="shadow text-blue-100 border-blue-100 bg-gray-500 font-semibold py-2 px-4 absolute right-0 mr-2">Add</button>
+      <button type="submit">Add</button>
     </form>
   );
 }
@@ -73,16 +73,15 @@ export const TaskInput: React.FC<{}> = () => {
   const onSubmit = handleSubmit(data => console.log(data))
 
   return (
-    <form className="flex items-center justify-between relative mb-8" onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <input
         name="name"
         ref={register({ required: true })}
         placeholder="Add new item..."
         type="text"
-        className="p-4 pr-20 border-l-4 border-gray-500 bg-gray-200 w-full shadow-inner outline-none"
       />
       {errors.name && <span>This field is required</span>}
-      <button type="submit" className="shadow text-blue-100 border-blue-100 bg-gray-500 font-semibold py-2 px-4 absolute right-0 mr-2">Add</button>
+      <button type="submit">Add</button>
     </form>
   );
 }

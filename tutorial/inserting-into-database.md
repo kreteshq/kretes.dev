@@ -1,8 +1,10 @@
 ---
-pos: 14
-title: 14. Inserting into Database
+pos: 13
+title: 13. Inserting into Database
 description: >
   Persisting tasks on the server via REST API
+images:
+- postgresql.svg
 ---
 
 # Inserting into Database

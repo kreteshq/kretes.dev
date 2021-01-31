@@ -1,8 +1,10 @@
 ---
-pos: 9
-title: 9. Fetching from API in React.js
+pos: 8
+title: 8. Fetching from API in React.js using React Query
 description: >
   Using React Query to integrate with a remote REST API endpoint
+images:
+- react-query.svg
 ---
 
 # Fetching Data from a RESTful API with React.js

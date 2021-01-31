@@ -1,8 +1,10 @@
 ---
-pos: 13
-title: 13. Querying Database
+pos: 12
+title: 12. Querying Database
 description: >
   Integrating with a database
+images:
+- postgresql.svg
 ---
 
 # Querying Database
