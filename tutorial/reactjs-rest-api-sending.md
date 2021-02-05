@@ -18,7 +18,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
-import { Task } from '@/Task/Shape';
+import { Task } from '@/types';
 
 const request = (data: Task) =>
   fetch('/_api/task', {

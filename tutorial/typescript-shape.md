@@ -14,10 +14,10 @@ Since we use TypeScript, let's define the shape of our data. For now, it will be
 Use the `generate` command to generate a shape scaffold for our Task:
 
 ```
-kretes generate shape Task
+kretes generate type Task
 ```
 
-This will create `<project root>/features/Task/Shape/index.ts` with an empty `Task` interface :
+This will create `<project root>/types/index.ts` with an empty `Task` interface :
 
 ```ts
 export interface Task {

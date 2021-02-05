@@ -13,12 +13,12 @@ Install Node.js via a package manager. Follow the [installation instructions](ht
 
 Install PostgreSQL
 
-Install Kretes globally.
+Install Kretes globally. You need to use the `next` pre-release in this tutorial.
 ```
-npm i -g kretes
+npm i -g kretes@next
 ```
 
-Be sure, you have version `0.88.2` or higher. You can check the Kretes version with the `-V` option:
+Be sure, you have version `1.0.0-alpha.2` or higher. You can check the Kretes version with the `-V` option:
 
 ```
 kretes -V
@@ -43,6 +43,7 @@ The React.js template configures your application, but also includes a set of li
 * [React Query](https://react-query.tanstack.com) is a data synchronization library for React.js that allows to easily integrate front end with back end.
 * [react-hook-form](https://react-hook-form.com) is a light, performant library for building forms in React.js
 * [wouter](https://github.com/molefrog/wouter) is a tiny (1kB) router for React.js apps that relies on Hooks.
+* [clsx](https://github.com/lukeed/clsx) is a tiny (228B) utility for constructing `className` strings conditionally.
 
 Once the project initialization is over, switch to the project directory
 

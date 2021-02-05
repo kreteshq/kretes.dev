@@ -41,7 +41,7 @@ Now, let's add `tailwindcss` and `autoprefixer` to the project as development de
 kretes add -D tailwindcss autoprefixer
 ```
 
-In `<project root>/config/client/index.html` replace the `<link>` tag pointing to CDN location of the MVP.css:
+In `<project root>/site/index.html` replace the `<link>` tag pointing to CDN location of the MVP.css:
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.6.3/mvp.css">
@@ -102,8 +102,8 @@ export const TaskInput: React.FC<{}> = ({}) => {
 
 ```tsx
 import React from 'react';
-import { TaskElement } from './Element';
-import { Task } from '@/Task/Shape';
+import { TaskElement } from '@/components';
+import { Task } from '@/types';
 
 export const TaskCollection: React.FC<{ collection: Task[] }> = ({ collection = [] }) => {
   return (

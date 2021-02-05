@@ -12,10 +12,10 @@ images:
 Let's refactor the `TaskCollection` component by introducing another component to represent a single task: `TaskElement`. First, we will generate the scaffold for the `TaskElement` component
 
 ```
-kretes generate view task TaskElement
+kretes generate component TaskElement
 ```
 
-This will gives us the following component at `<project root>/features/task/view/TaskElement.tsx`:
+This will gives us the following component at `<project root>/components/TaskElement.tsx`:
 
 ```tsx
 import React from 'react';
@@ -31,7 +31,8 @@ Before we provide the actual body of `TaskElement`, let's use it right away as a
 
 ```tsx
 import React from 'react';
-import { TaskElement } from './Element';
+
+import { TaskElement } from '@/components';
 
 export const TaskCollection = ({ collection = [] }) => {
   return (
@@ -65,7 +66,7 @@ We will assume that the data is passed into the `TaskCollection` as the `collect
 
 ```tsx
 import React from 'react';
-import { TaskElement } from './Element';
+import { TaskElement } from '@/components';
 
 export const TaskCollection = ({ collection = [] }) => {
   return (
@@ -80,7 +81,8 @@ As the field name in the collection matches the name of the prop in the `TaskEle
 
 ```tsx
 import React from 'react';
-import { TaskElement } from './Element';
+
+import { TaskElement } from '@/components';
 
 export const TaskCollection = ({ collection = [] }) => {
   return (
@@ -95,8 +97,9 @@ Optionally, let's make the code in `TaskCollection` more explicit to the compile
 
 ```tsx{3,8}
 import React from 'react';
-import { TaskElement } from './Element';
-import { Task } from '@/Task/Shape';
+
+import { TaskElement } from '@/components';
+import { Task } from '@/types';
 
 export const TaskCollection: React.FC<{ collection: Task[] }> = ({ collection = [] }) => {
   return (
