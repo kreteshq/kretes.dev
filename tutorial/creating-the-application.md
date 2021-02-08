@@ -13,12 +13,12 @@ Install Node.js via a package manager. Follow the [installation instructions](ht
 
 Install PostgreSQL
 
-Install Kretes globally. You need to use the `next` pre-release in this tutorial.
+Install Kretes globally.
 ```
-npm i -g kretes@next
+npm i -g kretes
 ```
 
-Be sure, you have version `1.0.0-alpha.2` or higher. You can check the Kretes version with the `-V` option:
+Be sure, you have version `1.0.0-alpha.5` or higher. You can check the Kretes version with the `-V` option:
 
 ```
 kretes -V
