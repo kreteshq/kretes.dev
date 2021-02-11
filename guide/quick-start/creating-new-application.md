@@ -20,17 +20,8 @@ From the command palette, select `Kretes: New Project`. Set the project name and
 
 ## Directory Structure
 
-The application directory has a number of auto-generated files and folders that make up the structure of a Kretes application. Here's a quick rundown on the function of each of the files and folders that Kretes generates by default:
+The application directory has a number of auto-generated files and folders that make up the structure of a Kretes application. Check the [Directory Structure](/docs/guide/in-depth/directory-structure/) section for details.
 
-| File/Folder | Function |
-| --- | --- |
-| `config/` | the application config |
-| `config/client/` | the client-side config mostly for setting up UI libraries & frameworks (React, Vue.js, etc) + TypeScript config|
-| `config/server/` | the server-side config: the routes declaration + TypeScript config |
-| `config/default.yml` | the database config, the deployment endpoints and everything else as YAML |
-| `features/` | Kretes organizes files by-feature, it's like a namespace |
-| `static/` | static assets |
-| `package.json` | npm dependencies needed for your Kretes application |
 
 ## Database Setup
 

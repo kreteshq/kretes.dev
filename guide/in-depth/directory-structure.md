@@ -4,8 +4,17 @@ title: Directory Structure
 ---
 # Directory Structure
 
-The directory structure in Kretes is organized around your application **features**, and not **by type**. This means that artifacts, either client-side or server-side are kept together. In other words, this approach groups together entities (classes, functions) that actually work together. This leads to high modularity of your application and better cohesion.
+The application directory has a number of auto-generated files and folders that make up the structure of a Kretes application. Here's a quick rundown on the function of each of the files and folders that Kretes generates by default:
 
-The *Folder-By-Feature* approach makes it easier to find files in your application directory. It is especially visible once your project grows - folder-by-feature is a better long-term approach due its scalability.
-
-To some extend, the *Folder-By-Feature* approach is similar to how recent frontend libraries and frameworks (React, Vue, etc) group together HTML, JavaScript and Stylesheets. In Kretes, this simply goes one step further by applying a similar technique to the entire application so that it covers both frontend and backend.
+| File/Folder | Function |
+| --- | --- |
+| `components/` | components (React.js, Vue, etc) used to build the applicaton UI (client-side) |
+| `config/` | the application config |
+| `config/client/` | the client-side config mostly for setting up UI libraries & frameworks (React, Vue.js, etc) + TypeScript config|
+| `config/server/` | the server-side config: the routes declaration + TypeScript config |
+| `config/default.yml` | the database config, the deployment endpoints and everything else as YAML |
+| `controllers/` | controllers define how to handle the server-side routing |
+| `site/` | the paths of your app, i.e. everything after the root (`/`) of your domain. It can be client- or server-side (including plain old HTML pages). The structure of this directory maps to the path structure. |
+| `static/` | static assets |
+| `types/` | a place for TypeScript types i.e. `type` & `interface` definitions |
+| `package.json` | npm dependencies needed for your Kretes application |
