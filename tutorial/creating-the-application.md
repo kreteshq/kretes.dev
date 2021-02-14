@@ -18,7 +18,7 @@ Install Kretes globally.
 npm i -g kretes
 ```
 
-Be sure, you have version `1.0.0-alpha.12` or higher. You can check the Kretes version with the `-V` option:
+Be sure, you have version `1.0.0-alpha.13` or higher. You can check the Kretes version with the `-V` option:
 
 ```
 kretes -V
