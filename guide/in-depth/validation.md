@@ -6,11 +6,10 @@ title: Validation
 
 ```ts
 import { Handler, response, Middleware, Pipeline, request } from 'kretes';
+import { validation } from 'kretes/request';
+import { OK } from 'kretes/response';
 
-const { validate } = request;
-const { OK } = response;
-
-const validator: Middleware = validate({ 
+const validator: Middleware = validation({ 
   name: { 
     type: String, 
     required: true, 
@@ -18,8 +17,8 @@ const validator: Middleware = validate({
   }
 })
 
-const handler: Handler = async (request) => {
-  return OK('X');
+const handler: Handler = request => {
+  return OK('Displayed only if the validation passes');
 }
 
 export const browse: Pipeline = [
