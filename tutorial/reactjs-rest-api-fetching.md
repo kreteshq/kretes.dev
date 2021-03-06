@@ -17,7 +17,7 @@ Fetching data from the server and synchronizing it with the application state on
 
 Similarly to `react-hook-form`, `react-query` is also included in the Kretes React.js template, no need to install it. We will add the data fetching mechanism in our top level React.js component: `App`. In `features/Base/View/index.tsx`, let's add the `request` function that defines the logic for fetching the tasks from our API using browser's built-in `fetch` function (referred to as the fetch API). Then, pass the `request` function to the `useQuery` hook that comes with `react-query`. This hook will create a client-side cache layer from the data returned by previously implemented `browse` handler. From now, the data exchange between the client and server part of our application is handled by React Query.
 
-```tsx{2,6-7,10,12-13,18}
+```tsx{2,7-8,11,13-14,19}
 import React from 'react';
 import { useQuery } from 'react-query';
 
@@ -46,12 +46,12 @@ export { App };
 
 Before we move to another topic, let's finish up this section by refactoring a bit our `App` component. We can extract the top-level HTML snippet to a separate component. This will be a plain container for the application layout. Such code organization will allow us easily to reuse in the future the same layout in different pages across the entire application.
 
-```tsx{9-11,13-14,23,26}
+```tsx{10-11,20,23}
 import React from 'react';
 import { useQuery } from 'react-query';
 
-import { TaskCollection, TaskInput } from '@/Task/View';
-import { Task } from '@/Task/Shape';
+import { TaskCollection, TaskInput } from '@/components';
+import { Task } from '@/types';
 
 const toJSON = (response: Response) => response.json()
 const request = () => fetch('/_api/task').then(toJSON);

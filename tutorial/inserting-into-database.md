@@ -12,9 +12,8 @@ images:
 Finally, we can define the API handler for adding new tasks to the collection. We need the `create` handler in the `task` controller. Put the following code in `<project root>/site/_api/task/create.ts`:
 
 ```ts
-import { Handler, response, database as db } from 'kretes';
-
-const { Created } = response;
+import { Handler, database as db } from 'kretes';
+import { Created } from 'kretes/response';
 
 export const create: Handler = async ({ params }) => {
   const { name } = params;

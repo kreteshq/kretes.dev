@@ -14,9 +14,8 @@ Once we have the database and the initial data inserted, our server can interact
 First, let's query the database and return the task collection via the `browse` handler so that it can be displayed in the React.js application. Modify the `<project root>/site/_api/task/browse.ts`
 
 ```ts{1,6-7}
-import { Handler, response, database as db } from 'kretes';
-
-const { OK } = response;
+import { Handler, database as db } from 'kretes';
+import { OK } from 'kretes/response';
 
 export const browse: Handler = async ({ }) => {
   const collection = await db.from('task')

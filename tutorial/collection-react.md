@@ -64,8 +64,9 @@ This is, however, not ideal. We repeat the component three times and the titles 
 
 We will assume that the data is passed into the `TaskCollection` as the `collection` prop. It's an array that represents the collection of our tasks. We can map over it to display as many `TaskElement`s as needed.
 
-```tsx
+```tsx{8}
 import React from 'react';
+
 import { TaskElement } from '@/components';
 
 export const TaskCollection = ({ collection = [] }) => {
@@ -79,7 +80,7 @@ export const TaskCollection = ({ collection = [] }) => {
 
 As the field name in the collection matches the name of the prop in the `TaskElement`, we can simplify the code a bit by destructuring each element directly into the props of the component:
 
-```tsx
+```tsx{8}
 import React from 'react';
 
 import { TaskElement } from '@/components';
@@ -95,7 +96,7 @@ export const TaskCollection = ({ collection = [] }) => {
 
 Optionally, let's make the code in `TaskCollection` more explicit to the compiler by annotating it using the `Task` type we created previously.
 
-```tsx{3,8}
+```tsx{3,9}
 import React from 'react';
 
 import { TaskElement } from '@/components';
