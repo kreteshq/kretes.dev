@@ -268,17 +268,24 @@ Those workflows are **local** for the particular path, contrary to Express.js th
 
 ### Global Middlewares 
 
-In order to replicate that behaviour you can also add global middlewares using the `use` method.
+Global middlewares are middlewares that will be executed for every route. You can define them inside `config/server/middlewares.ts`. It's a list of functions that defines their execution from top to bottom.
+
 
 ```js
-let id = 0, sequence = () => id++
+import { Middleware } from "kretes";
 
-app.use(handler => {
-  return async request => {
-    request.id = sequence()
+export const middlewares: Middleware[] = [
+  handler => {
+    // here you can define the state
+    // in between the request-response cycle
+    let id = 0, sequence = () => id++
 
-    return handler(request)
-  } 
-})
+    return request => {
+      request.id = sequence()
+
+      return handler(request)
+    } 
+  }
+];
 ```
 
