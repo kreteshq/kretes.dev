@@ -56,10 +56,15 @@ You need at least one command before moving onn
 
 `kretes install` installs the application dependencies as specified in `package.json`. This is a convenience wrapper around `pnpm install`.
 
-### `update` - Update Dependencies
-
-`kretes update` updates the application dependencies. Updating only changes the minor and patch versions in the lock file (`pnpm-lock.yaml`). This is a convenience wrapper around `pnpm update`.
-
-### `upgrade` - Upgrade Dependencies
+### `upgrade` - Upgrade dependencies
 
 `kretes upgrade` upgrades the application dependencies. This comamnd checks if there are new versions of packages in the npm registery as defined in `package.json`. Upgrading changes `package.json`.
+
+### `database` - Manage the database 
+
+`kretes database` (alias `db`) provides a set of commands for the database management. The database connection is established based on the database configuration set in `config/default.json`.
+
+* `kretes database create` creates a new database
+* `kretes database reset` drops the existing database and creates a new, empty one with the same name. 
+* `kretes database setup` creates the database structure (i.e. tables, schemas, etc) as described in `db/setup.sql`. The database shape must be written using SQL.
+* `kretes database seed` reads the `db/seed.sql` and uses its content to seed an exisiting database. The seed must be written using SQL. 
