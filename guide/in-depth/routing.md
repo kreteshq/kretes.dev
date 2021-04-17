@@ -217,7 +217,11 @@ const routes: Routes = [
 
 ## Reusable workflows / Middlewares
 
-Handlers can be composed from simple functions so that the shared bevahior can be extracted into reusable chunks of code. Those functions are equivalent to Express.js/Koa middlewares. In order to define a workflow, you need to map an array of functions with a handler at the end to the specific path.
+Handlers can be composed from simple functions so that the shared bevahior can be extracted into reusable chunks of code. Those functions are equivalent to Express.js/Koa middlewares. 
+
+### Per-Route Middlewares 
+
+In order to define a workflow, you need to map an array of functions with a handler at the end to the specific path.
 
 ```js
 const routes: Routes = [
@@ -259,15 +263,22 @@ const routes: Routes = [
 ]
 ```
 
-Those workflows are **local** for the particular path, contrary to Express.js that wraps every middleware around every path. In order to replicate that behaviour you can also add global middlewares using the `use` method.
+Those workflows are **local** for the particular path, contrary to Express.js that wraps every middleware around every path. 
+
+
+### Global Middlewares 
+
+In order to replicate that behaviour you can also add global middlewares using the `use` method.
 
 ```js
 let id = 0, sequence = () => id++
 
-app.use(async (context, next) => {
-  const { request } = context
-  request.id = sequence()
-  return next(context)
+app.use(handler => {
+  return async request => {
+    request.id = sequence()
+
+    return handler(request)
+  } 
 })
 ```
 
