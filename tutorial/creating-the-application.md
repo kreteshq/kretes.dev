@@ -30,7 +30,7 @@ During installation, Kretes adds the `ks` alias for convenience so that you can 
 
 ## Create Application
 
-Kretes provides [application templates](/docs/integrations) that combine popular libraries, tools and frameworks to even further speed up the process of creating web applications. In this tutorial we are using React.js on the front end, thus we will generate a Kretes application by passing `react` to the `--template` paramter.
+Kretes provides [application templates](/docs/integrations) that combine popular libraries, tools and frameworks to even further speed up the process of creating web applications. In this tutorial we are using React.js on the front end, thus we will generate a Kretes application by passing `react` to the `--template` parameter.
 
 Create a new applicaiton using the React.js template
 
@@ -57,6 +57,6 @@ Open it using your editor of choice and start the application in development mod
 kretes start
 ```
 
-From now one you shouldn't need to restart the application while developing. There may be occasional quirks, but I'm working to eliminate them. Feel free to let me know anytime if you stumble on something.
+From now on you shouldn't need to restart the application while developing. There may be occasional quirks, but I'm working to eliminate them. Feel free to let me know anytime if you stumble on something.
 
 The application starts on the port `:5544`. In your browser, open [http://localhost:5544](http://localhost:5544) to see it.

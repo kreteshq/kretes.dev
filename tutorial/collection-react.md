@@ -45,7 +45,7 @@ export const TaskCollection = ({ collection = [] }) => {
 }
 ```
 
-We decided to pass the task title as the `title` prop of `TaskElement` to parametrize the title of eah task. This decision requires us to adapt the newly created `TaskElement`. We define the title as the component property (often referred to as *prop*). In the following example, our prop is `title` and becomes the input parameter to the `TaskElement` component function.
+We decided to pass the task title as the `title` prop of `TaskElement` to parametrize the title of each task. This decision requires us to adapt the newly created `TaskElement`. We define the title as the component property (often referred to as *prop*). In the following example, our prop is `title` and becomes the input parameter to the `TaskElement` component function.
 
 ```tsx
 import React from 'react';
