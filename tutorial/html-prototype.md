@@ -62,7 +62,7 @@ export const TaskCollection: React.FC<{}> = () => {
 
 It is a list (`<ul>`) of three elements (`<li>`) where each represent a task containing a checkbox and a label.
 
-Go to `<project root>/components/App.tsx` and import newly created `TaskCollection` component as shown below:
+Go to `<project root>/components/App.tsx` and import newly created `TaskCollection` component so that the `App.tsx` content looks as shown below:
 
 ```tsx{8}
 import React from 'react';

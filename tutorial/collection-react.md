@@ -116,3 +116,5 @@ export const TaskCollection: React.FC<{ collection: Task[] }> = ({ collection = 
   );
 }
 ```
+
+The final result is a 3-element, static list of tasks.
