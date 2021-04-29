@@ -19,6 +19,10 @@ next:
 
 Install Node.js via a package manager. Follow the [installation instructions](https://nodejs.org/en/download/package-manager/) at the Node.js website
 
+### pnpm 
+
+[pnpm](https://pnpm.io/) is a fast, disk efficient package manager for JavaScript. It uses a content-addressable filesystem to store packages in a **single place** on your computer - contrary to `npm` or `yarn`, where dependencies are duplicated for each new project. pnpm is also up to 2x faster than `npm` or `yarn`.
+
 ### PosgreSQL
 
 Install PostgreSQL, check [the official docs](https://www.postgresql.org/download/) for a method that corresponds to your operating system.
