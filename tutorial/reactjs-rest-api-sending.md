@@ -5,6 +5,12 @@ description: >
   Using React Query to mutate state on the server
 images:
 - react-query.svg
+prev:
+  title: Fetching Data from a RESTful API with React.js
+  path: tutorial/reactjs-rest-api-fetching/
+next:
+  title: Optimistic Updates in UI 
+  path: tutorial/optimistic-updates/ 
 ---
 
 # Sending Data to a RESTful API with React.js

@@ -3,6 +3,12 @@ pos: 2
 title: 2. Setup
 description: >
   Setting up the project
+prev:
+  title: Specification
+  path: tutorial/specification/
+next:
+  title: Using TypeScript 
+  path: tutorial/typescript-shape/
 ---
 
 # Setup

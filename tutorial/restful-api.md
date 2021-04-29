@@ -3,6 +3,12 @@ pos: 7
 title: 7. RESTful APIs
 description: >
   Creating REST APIs using Kretes controllers & handlers
+prev:
+  title: Form Handling in React.js 
+  path: tutorial/forms-react/
+next:
+  title: Fetching Data from a RESTful API with React.js
+  path: tutorial/reactjs-rest-api-fetching/
 ---
 
 # RESTful APIs

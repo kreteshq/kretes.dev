@@ -5,6 +5,12 @@ description: >
   Using React.js to handle form validations & submissions
 images:
 - react.svg
+prev:
+  title: Collections in React.js
+  path: tutorial/collection-react/
+next:
+  title: RESTful APIs 
+  path: tutorial/restful-api/
 ---
 
 # Forms with React.js

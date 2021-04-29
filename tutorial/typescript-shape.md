@@ -5,6 +5,12 @@ description: >
   Defining the shape of date using TypeScript interfaces
 images:
 - typescript.svg
+prev:
+  title: Setup 
+  path: tutorial/creating-the-application/
+next:
+  title: Prototyping with HTML 
+  path: tutorial/html-prototype/
 ---
 
 # TypeScript Shape

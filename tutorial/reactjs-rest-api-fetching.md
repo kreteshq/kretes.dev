@@ -5,6 +5,12 @@ description: >
   Using React Query to integrate with a remote REST API endpoint
 images:
 - react-query.svg
+prev:
+  title: RESTful APIs 
+  path: tutorial/restful-api/
+next:
+  title: Sending Data to a RESTful API with React.js
+  path: tutorial/reactjs-rest-api-sending/
 ---
 
 # Fetching Data from a RESTful API with React.js

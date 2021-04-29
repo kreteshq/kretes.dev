@@ -5,6 +5,12 @@ description: >
   Let's use Tailwind CSS to design and build the UI prototype.
 images:
 - tailwindcss.svg
+prev:
+  title: Docker Image 
+  path: tutorial/docker/
+next:
+  title: Summary 
+  path: tutorial/finishing-up/
 ---
 
 # Using Tailwind CSS in Kretes

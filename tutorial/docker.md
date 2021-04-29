@@ -5,6 +5,12 @@ description: >
   Building a Docker image for a Kretes app
 images:
 - docker.png
+prev:
+  title: Inserting into Database 
+  path: tutorial/inserting-into-database/
+next:
+  title: Using Tailwind CSS 
+  path: tutorial/using-tailwindcss/
 ---
 
 # Building a Docker image

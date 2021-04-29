@@ -3,6 +3,9 @@ pos: 16
 title: 16. Summary
 description: >
   Adding final touches
+prev:
+  title: Using Tailwind CSS 
+  path: tutorial/using-tailwindcss/
 ---
 
 # Summary

@@ -5,6 +5,12 @@ description: >
   Implementing optimistic updates for React.js UIs
 images:
 - react-query.svg
+prev:
+  title: Sending to API in React.js
+  path: tutorial/reactjs-rest-api-sending/
+next:
+  title: Database Setup 
+  path: tutorial/database-setup/
 ---
 
 # Implementing Optimistic Updates in React.js

@@ -5,6 +5,12 @@ description: >
   Persisting tasks on the server via REST API
 images:
 - postgresql.svg
+prev:
+  title: Querying Database 
+  path: tutorial/querying-database/
+next:
+  title: Docker Image 
+  path: tutorial/docker/
 ---
 
 # Inserting into Database

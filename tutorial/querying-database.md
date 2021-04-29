@@ -5,6 +5,12 @@ description: >
   Integrating with a database
 images:
 - postgresql.svg
+prev:
+  title: Database Setup 
+  path: tutorial/database-setup/
+next:
+  title: Inserting into Database 
+  path: tutorial/inserting-into-database/
 ---
 
 # Querying Database

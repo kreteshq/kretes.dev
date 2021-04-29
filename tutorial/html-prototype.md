@@ -3,6 +3,12 @@ pos: 4
 title: 4. Prototyping with HTML
 description: >
   Using HTML to build the UI prototype.
+prev:
+  title: Using TypeScript 
+  path: tutorial/typescript-shape/
+next:
+  title: Collections in React.js
+  path: tutorial/collection-react/
 ---
 
 # Prototyping with HTML

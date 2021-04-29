@@ -3,6 +3,9 @@ pos: 1
 title: 1. Specification
 description: >
   A spec describing what we are going to build in this tutorial
+next:
+  title: Setup 
+  path: tutorial/creating-the-application/
 ---
 
 # Specification

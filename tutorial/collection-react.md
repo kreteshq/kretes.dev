@@ -5,6 +5,12 @@ description: >
   Displaying data using collections in React.js
 images:
 - react.svg
+prev:
+  title: Prototyping with HTML 
+  path: tutorial/html-prototype/
+next:
+  title: Form Handling in React.js 
+  path: tutorial/forms-react/
 ---
 
 # Displaying Collections in React.js

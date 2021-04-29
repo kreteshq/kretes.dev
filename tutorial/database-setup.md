@@ -5,6 +5,12 @@ description: >
   Setting up a relational database
 images:
 - postgresql.svg
+prev:
+  title: Optimistic Updates in UI 
+  path: tutorial/optimistic-updates/
+next:
+  title: Querying Database 
+  path: tutorial/querying-database/
 ---
 
 # Database Setup
