@@ -23,7 +23,7 @@ kretes generate component TaskCollection
 `kretes` can be abbreviated to just `ks`, `generate` to just `g` and `component` to just `comp` i.e. the command `ks g comp TaskCollection` will also work
 </Notice>
 
-This command will create a file in `<project root>/components/`. Open the `TaskCollection.tsx` and replace the following content:
+This command will create a file in `app/components/`. Open the `TaskCollection.tsx` and replace the following content:
 
 ```tsx
 import React from 'react';
@@ -62,7 +62,7 @@ export const TaskCollection: React.FC<{}> = () => {
 
 It is a list (`<ul>`) of three elements (`<li>`) where each represent a task containing a checkbox and a label.
 
-Go to `<project root>/components/App.tsx` and import newly created `TaskCollection` component so that the `App.tsx` content looks as shown below:
+Go to `app/components/App.tsx` and import newly created `TaskCollection` component so that the `App.tsx` content looks as shown below:
 
 ```tsx{8}
 import React from 'react';
@@ -81,7 +81,7 @@ export { App };
 ```
 
 <Notice>
-`@/[directory name]` is an alias for conveniently refer to files in the root of your project (e.g. `components/`) without using relative paths, such as `../` or `../..`.
+`@/[directory name]` is an alias for conveniently refer to files in the `app` folder of your project without using relative paths, such as `../` or `../..`.
 </Notice>
 
 ---
@@ -135,7 +135,7 @@ Optionally, we can add yet another component for the header section, let's call 
 kretes generate component Hero
 ```
 
-As before, this will create the `Hero.tsx` file in `<project root>/components/`. Let's open it and change its content as follows:
+As before, this will create the `Hero.tsx` file in `app/components/`. Let's open it and change its content as follows:
 
 ```tsx
 import React from 'react';

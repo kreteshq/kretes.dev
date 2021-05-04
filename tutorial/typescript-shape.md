@@ -23,7 +23,7 @@ Use the `generate` command to generate a shape scaffold for our Task:
 kretes generate type Task
 ```
 
-This will create `<project root>/types/index.ts` with an empty `Task` interface :
+This will create `app/types/index.ts` with an empty `Task` interface :
 
 ```ts
 export interface Task {

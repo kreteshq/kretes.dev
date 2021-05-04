@@ -15,9 +15,9 @@ next:
 
 # Using Tailwind CSS in Kretes
 
-CSS in Kretes is located in the `<project root>/stylesheets` directory. By convention the `main.css` is the entry point. You can use it as the only file containing your CSS or you can split it into several files and import using the `@import` directive.
+CSS in Kretes is located in the `stylesheets` directory. By convention the `main.css` is the entry point. You can use it as the only file containing your CSS or you can split it into several files and import using the `@import` directive.
 
-Let's start by creating the configuration files for Tailwind. We need `tailwind.config.js` and `postcss.config.js`. Both must be placed in the `<project root>/config` directory.
+Let's start by creating the configuration files for Tailwind. We need `tailwind.config.js` and `postcss.config.js`. Both must be placed in the `config/` directory.
 
 `tailwind.config.js`:
 ```js
@@ -47,7 +47,7 @@ Now, let's add `tailwindcss` and `autoprefixer` to the project as development de
 kretes add -D tailwindcss autoprefixer
 ```
 
-In `<project root>/site/index.html` replace the `<link>` tag pointing to CDN location of the MVP.css:
+In `site/index.html` replace the `<link>` tag pointing to CDN location of the MVP.css:
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.6.3/mvp.css">
@@ -60,7 +60,7 @@ with the CSS link pointing to our local `main.css` file:
 <link rel="stylesheet" href="/main.css">
 ```
 
-In `<project root>/stylesheets/main.css`, put the Tailwind directives:
+In `stylesheets/main.css`, put the Tailwind directives:
 
 ```css
 @tailwind base;
@@ -142,7 +142,7 @@ export const TaskElement: React.FC<{ title: string }> = ({ title }) => {
 }
 ```
 
-As we are using a custom shape for the checkbox from SVG, there is an additional CSS change. Put the following snippet at the bottom of `<project root>/stylesheets/main.css`
+As we are using a custom shape for the checkbox from SVG, there is an additional CSS change. Put the following snippet at the bottom of `stylesheets/main.css`
 
 ```css
 input:checked+svg {

@@ -21,7 +21,7 @@ Let's refactor the `TaskCollection` component by introducing another component t
 kretes generate component TaskElement
 ```
 
-This will gives us the following component at `<project root>/components/TaskElement.tsx`:
+This will gives us the following component at `app/components/TaskElement.tsx`:
 
 ```tsx
 import React from 'react';

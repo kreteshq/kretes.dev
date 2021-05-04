@@ -51,7 +51,7 @@ Install Kretes globally so that you can access its CLI anywhere.
 npm i -g kretes
 ```
 
-Be sure, you have version `1.0.0-alpha.43` or higher. You can check the Kretes version with the `-V` option:
+Be sure, you have version `1.0.0-alpha.44` or higher. You can check the Kretes version with the `-V` option:
 
 ```bash
 kretes -V
