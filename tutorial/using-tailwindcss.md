@@ -1,6 +1,6 @@
 ---
 pos: 15
-title: 15. Using Tailwind CSS
+title: Using Tailwind CSS
 description: >
   Let's use Tailwind CSS to design and build the UI prototype.
 images:

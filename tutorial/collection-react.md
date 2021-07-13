@@ -1,6 +1,6 @@
 ---
 pos: 5
-title: 5. Collections in React.js
+title: Collections in React.js
 description: >
   Displaying data using collections in React.js
 images:

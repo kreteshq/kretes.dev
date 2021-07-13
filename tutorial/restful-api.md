@@ -1,6 +1,6 @@
 ---
 pos: 7
-title: 7. RESTful APIs
+title: RESTful APIs
 description: >
   Creating REST APIs using Kretes controllers & handlers
 prev:

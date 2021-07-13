@@ -1,6 +1,6 @@
 ---
 pos: 14
-title: 14. Docker Image
+title: Docker Image
 description: >
   Building a Docker image for a Kretes app
 images:

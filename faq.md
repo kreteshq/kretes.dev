@@ -1,4 +1,4 @@
-# Frequently Asked Questions
+# FAQ
 
 ## Kretes CLI without VS Code
 

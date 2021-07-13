@@ -1,6 +1,6 @@
 ---
 pos: 9
-title: 9. Sending to API in React.js
+title: Sending to API in React.js
 description: >
   Using React Query to mutate state on the server
 images:

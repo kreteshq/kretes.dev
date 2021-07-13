@@ -1,6 +1,6 @@
 ---
 pos: 8
-title: 8. Fetching from API in React.js using React Query
+title: Fetching from API in React.js using React Query
 description: >
   Using React Query to integrate with a remote REST API endpoint
 images:

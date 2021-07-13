@@ -1,6 +1,6 @@
 ---
 pos: 4
-title: 4. Prototyping with HTML
+title: Prototyping with HTML
 description: >
   Using HTML to build the UI prototype.
 prev:

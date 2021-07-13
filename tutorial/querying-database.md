@@ -1,6 +1,6 @@
 ---
 pos: 12
-title: 12. Querying Database
+title: Querying Database
 description: >
   Integrating with a database
 images:

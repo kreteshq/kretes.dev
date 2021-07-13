@@ -1,6 +1,6 @@
 ---
 pos: 11
-title: 11. Database Setup
+title: Database Setup
 description: >
   Setting up a relational database
 images:

@@ -1,6 +1,6 @@
 ---
 pos: 10
-title: 10. Optimistic Updates in UI
+title: Optimistic Updates in UI
 description: >
   Implementing optimistic updates for React.js UIs
 images:
