@@ -14,5 +14,5 @@ logo: solid.png
 kretes new solid-app --template solid 
 ```
 
-This starter sets up a Node.js application with Solid.js as the UI library. The goal is to provide a ready to use template to building full-stack application in TypeScript that incorporates the best practices for both Solid.js and Node.js.
+This starter sets up a Node.js application with Solid.js as the UI library. The goal is to provide a ready-to-use template for building full-stack applications in TypeScript that incorporate the best practices for both Solid.js and Node.js.
 
